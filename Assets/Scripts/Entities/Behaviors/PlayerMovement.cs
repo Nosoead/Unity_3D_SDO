@@ -5,14 +5,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement")]
-    public float forwardSpeed = 2.0f;
-    public float forwardRunSpeed = 7.0f;
-    public float backwardSpeed = 2.0f;
-    public float rotateSpeed = 2.0f;
-
     private Rigidbody movementRigidbody;
     private InputHandler inputHandler;
+    private PlayerStat stat;
     private float moveDirection = 0;
     private float moveRotate = 0;
     private bool isRunning = false;
@@ -21,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementRigidbody = GetComponent<Rigidbody>();
         inputHandler = GetComponent<InputHandler>();
+        stat = GetComponent<PlayerStat>();
     }
 
     private void OnEnable()
@@ -44,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnMovement(Vector2 direction)
     {
         moveDirection = direction.y;
-        moveRotate = direction.x * rotateSpeed;
+        moveRotate = direction.x * stat.rotateSpeed;
     }
 
     private void OnVelocityUp(bool isPressed)
@@ -56,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 currentDirection = transform.forward * moveDirection;
         bool isMovingBackward = Vector3.Dot(currentDirection, transform.forward) < 0;
-        float currentSpeed = isMovingBackward ? forwardSpeed : (isRunning ? forwardRunSpeed : forwardSpeed);
+        float currentSpeed = isMovingBackward ? stat.backwardSpeed : (isRunning ? stat.forwardRunSpeed : stat.forwardSpeed);
         currentDirection = currentDirection.normalized * currentSpeed;
         currentDirection.y = movementRigidbody.velocity.y;
         movementRigidbody.velocity = currentDirection;

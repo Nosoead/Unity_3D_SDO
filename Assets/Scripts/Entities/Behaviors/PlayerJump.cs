@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-    [Header("Jump")]
-    public float jumpPower = 3.0f;
-    public LayerMask groundLayerMask;
-
     private Rigidbody jumpRigidbody;
     private InputHandler inputHandler;
+    private PlayerStat stat;
 
     private void Awake()
     {
         jumpRigidbody = GetComponent<Rigidbody>();
         inputHandler = GetComponent<InputHandler>();
+        stat = GetComponent<PlayerStat>();
     }
 
     private void OnEnable()
@@ -31,7 +29,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (IsGround())
         {
-            jumpRigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            jumpRigidbody.AddForce(Vector2.up * stat.jumpPower, ForceMode.Impulse);
         }
     }
 
@@ -47,7 +45,7 @@ public class PlayerJump : MonoBehaviour
 
         for (int i = 0; i < rays.Length; i++)
         {
-            if (Physics.Raycast(rays[i], 0.1f, groundLayerMask))
+            if (Physics.Raycast(rays[i], 0.1f, stat.groundLayerMask))
             {
                 return true;
             }
