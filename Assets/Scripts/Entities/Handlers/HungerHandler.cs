@@ -62,4 +62,9 @@ public class HungerHandler : MonoBehaviour
     {
         CurrentValue += passiveValue;
     }
+
+    public void ApplyExternalEffect(float ExternalValue)
+    {
+        CurrentValue += ExternalValue;
+    }
 }

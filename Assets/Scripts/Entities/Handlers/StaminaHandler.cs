@@ -100,4 +100,9 @@ public class StaminaHandler : MonoBehaviour
     {
         CurrentValue += stat.RunningStamina;
     }
+
+    public void ApplyExternalEffect(float ExternalValue)
+    {
+        CurrentValue += ExternalValue;
+    }
 }

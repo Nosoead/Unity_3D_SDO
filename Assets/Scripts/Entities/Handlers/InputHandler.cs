@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class InputHandler : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class InputHandler : MonoBehaviour
     public UnityAction OnInventoryEvent;
     public UnityAction OnSettingEvent;
 
-    private PlayerInput Input;
+    public PlayerInput Input;
 
     private void Awake()
     {
@@ -33,8 +34,10 @@ public class InputHandler : MonoBehaviour
         Input.Player.VelocityUp.canceled += PlayerVelocityUp;
         Input.FirstLook.Look.performed += PlayerLook;
         Input.FirstLook.Look.canceled += PlayerLook;
+
         Input.PlayerToUI.ItemInventory.performed += PlayerInventory;
         Input.PlayerToUI.Setting.performed += PlayerSetting;
+
 
         Input.Player.Enable();
         Input.FirstLook.Enable();

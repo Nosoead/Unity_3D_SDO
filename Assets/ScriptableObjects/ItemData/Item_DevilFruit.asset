@@ -21,7 +21,6 @@ MonoBehaviour:
   maxStackAmount: 0
   equipmentSlotType: 0
   equipPrefab: {fileID: 0}
-  consumableType: 2
   consumables:
-  - type: 2
+  - type: 700
     value: 100

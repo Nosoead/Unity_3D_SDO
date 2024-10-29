@@ -9,19 +9,34 @@ public class Interaction : MonoBehaviour
     public float maxCheckDistance;
     public LayerMask layerMask;
 
+    private InputHandler inputHandler;
     public GameObject curInteractGameObject;
     private IInteractable curInteractable;
 
     public TextMeshProUGUI promptText;
     private Camera camera;
 
-    void Start()
+    private void Awake()
+    {
+        inputHandler = GetComponent<InputHandler>();
+    }
+
+    private void OnEnable()
+    {
+        inputHandler.OnInteractionEvent += OnInteract;
+    }
+
+    private void OnDisable()
+    {
+        inputHandler.OnInteractionEvent -= OnInteract;
+    }
+
+    private void Start()
     {
         camera = Camera.main;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Time.time - lastCheckTime > checkRate)
         {
@@ -54,9 +69,9 @@ public class Interaction : MonoBehaviour
         promptText.text = curInteractable.GetInteractPrompt();
     }
 
-    public void OnInteractInput(InputAction.CallbackContext context)
+    public void OnInteract()
     {
-        if (context.phase == InputActionPhase.Started && curInteractable != null)
+        if (curInteractable != null)
         {
             curInteractable.OnInteract();
             curInteractGameObject = null;

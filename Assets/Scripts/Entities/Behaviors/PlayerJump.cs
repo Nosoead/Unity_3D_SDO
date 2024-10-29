@@ -8,6 +8,10 @@ public class PlayerJump : MonoBehaviour
     private InputHandler inputHandler;
     private PlayerStat stat;
 
+    private int jumpCounter = 0;
+    private int jumpMaxCounter = 1;
+    private Coroutine coroutine;
+
     private void Awake()
     {
         jumpRigidbody = GetComponent<Rigidbody>();
@@ -35,6 +39,7 @@ public class PlayerJump : MonoBehaviour
 
     private bool IsGround()
     {
+
         Ray[] rays = new Ray[4]
         {
             new Ray(transform.position + (transform.forward*0.2f) + (transform.up * 0.01f), Vector3.down),
@@ -45,11 +50,40 @@ public class PlayerJump : MonoBehaviour
 
         for (int i = 0; i < rays.Length; i++)
         {
-            if (Physics.Raycast(rays[i], 0.1f, stat.groundLayerMask))
+            if (Physics.Raycast(rays[i], 0.1f, stat.groundLayerMask) && jumpCounter ==0)
             {
+                jumpCounter++;
+                return true;
+            }
+            else if (jumpCounter < jumpMaxCounter)
+            {
+                jumpCounter++;
                 return true;
             }
         }
+        for (int i = 0; i < rays.Length; i++)
+        {
+            if (Physics.Raycast(rays[i], 0.1f, stat.groundLayerMask))
+            {
+                jumpCounter = 0;
+            }
+        }
         return false;
+    }
+
+    public void DoubleJump()
+    {
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+        coroutine = StartCoroutine(SpeedUpCoroutine(30f, 2));
+    }
+
+    private IEnumerator SpeedUpCoroutine(float delayTime, int jumpCounter)
+    {
+        jumpMaxCounter = jumpCounter;
+        yield return new WaitForSeconds(delayTime);
+        jumpMaxCounter = 0;
     }
 }
