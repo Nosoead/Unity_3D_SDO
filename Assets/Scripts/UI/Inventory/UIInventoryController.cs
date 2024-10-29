@@ -21,10 +21,10 @@ public class UIInventoryController : MonoBehaviour
     public GameObject unequipButton;
     public GameObject dropButton;
 
-    private PlayerConditionController conditionController;
-    private PlayerMovement playerMovement;
-    private PlayerJump playerJump;
-    private ItemDataSO selectedItem;
+    public PlayerConditionController conditionController;
+    public PlayerMovement playerMovement;
+    public PlayerJump playerJump;
+    public ItemDataSO selectedItem;
     
     int selectedItemIndex = 0;
     int curEquipIndex;
@@ -183,7 +183,6 @@ public class UIInventoryController : MonoBehaviour
                         playerMovement.SpeedUp();
                         break;
                     case ConsumableType.Double:
-                        Debug.Log("test");
                         playerJump.DoubleJump();
                         break;
                     case ConsumableType.DevilFruit:

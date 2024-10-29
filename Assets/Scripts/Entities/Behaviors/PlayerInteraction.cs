@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Interaction : MonoBehaviour
+public class PlayerInteraction : MonoBehaviour
 {
     public float checkRate = 0.05f;
     private float lastCheckTime;
@@ -70,7 +70,7 @@ public class Interaction : MonoBehaviour
     }
 
     public void OnInteract()
-    {
+    {   
         if (curInteractable != null)
         {
             curInteractable.OnInteract();

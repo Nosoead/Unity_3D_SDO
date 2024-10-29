@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ApplyMovement(float moveDirection, float speedMultiplier)
     {
+        //TODO : if문으로 위아래로 바꿔주기.
         Vector3 currentDirection = transform.forward * moveDirection;
         bool isMovingBackward = Vector3.Dot(currentDirection, transform.forward) < 0;
 

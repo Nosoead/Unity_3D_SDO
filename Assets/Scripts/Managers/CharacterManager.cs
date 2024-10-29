@@ -8,7 +8,7 @@ public class CharacterManager : Singleton<CharacterManager>
     private Player player;
     public Player Player
     {
-        //get
+        //get //공부 기록용으로 남겨뒀습니다.
         //{
         //    if (player == null)
         //    {
