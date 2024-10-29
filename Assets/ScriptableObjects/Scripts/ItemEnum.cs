@@ -14,7 +14,9 @@ public enum EquipmentSlotType
 
 public enum ConsumableType
 {
-    Health,
+    Health = 0,
     Hunger,
-    DevilFruit
+    Speed = 200,
+    Double,
+    DevilFruit = 700
 }
