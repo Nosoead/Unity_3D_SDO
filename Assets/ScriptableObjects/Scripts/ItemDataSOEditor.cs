@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+//에디터를 통해 불필요한 세팅을 방지했습니다.
 [CustomEditor(typeof(ItemDataSO))]
 public class ItemDataSOEditor : Editor
 {

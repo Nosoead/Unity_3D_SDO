@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+
+//르탄레인 세로버전 엘리베이터입니다.
 public class Elevator : MonoBehaviour
 {
     public float elevatordirection;

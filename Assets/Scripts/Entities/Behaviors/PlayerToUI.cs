@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows;
 
+//UI를 띄우는 부분 입니다.
+//OnInventory부분에서 구독을 해지하고 연결하는 것으로 InputActionMap을 재설정합니다.
+//스탠다드반 InputAction 강의보고 감명받아서 구현해봤습니다.
 public class PlayerToUI : MonoBehaviour
 {
     private InputHandler inputHandler;

@@ -1,7 +1,8 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
+//강의내용에 Generate C#인풋을 연동시켜 Enalbe과 Disable로 이벤트 연결해제를 했습니다.
+//이 외의 내용은 강의내용이랑 같아 의미가 없습니다.
 public class PlayerInteraction : MonoBehaviour
 {
     public float checkRate = 0.05f;

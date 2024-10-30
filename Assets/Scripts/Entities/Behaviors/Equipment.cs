@@ -1,8 +1,7 @@
-
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//강의내용이랑 같아 의미가 없습니다.
 public class Equipment : MonoBehaviour
 {
     public ItemEquip curEquip;

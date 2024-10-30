@@ -1,4 +1,4 @@
-
+//아이템 열거 모음집입니다.
 public enum ItemType
 {
     Equipable,

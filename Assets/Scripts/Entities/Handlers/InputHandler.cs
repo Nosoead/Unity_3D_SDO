@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 
+
+//궁극의 인풋시스템. Map 안에 있는 Acion을 전부 이벤트 오픈하고
+//각 인풋에 맞는 행동들을 다른 클래스에서 구독해서 쓸 수 있도록 했습니다.
 public class InputHandler : MonoBehaviour
 {
     public UnityAction<Vector2> OnMoveEvent;

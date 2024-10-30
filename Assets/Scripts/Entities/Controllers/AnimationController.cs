@@ -1,8 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+//애니메이션 걷기, 점프, 달리기를 통제하는 코드입니다.
 public class AnimationController : MonoBehaviour
 {
     static int idleState = Animator.StringToHash("Base Layer.Idle");

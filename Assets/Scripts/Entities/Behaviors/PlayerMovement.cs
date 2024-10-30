@@ -1,8 +1,9 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+
+
+//W,S는 움직임으로 A,D는 좌우 회전을 합니다.
+//여기는 이동과 속도업 두개의 이벤트를 구독해서 shift를 누르면 달리기 속도로 해놨습니다.
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveRotate = 0;
     private bool isRunning = false;
 
+    //코루틴이 돌면 속도가 30초간 증가하게 했습니다. 아직 미숙해서 매직넘버 썼습니다.
     private float speedMultiplier = 1f;
     private Coroutine coroutine;
 

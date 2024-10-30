@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+
+//헬스와 동일합니다.
 public class HungerHandler : MonoBehaviour
 {
     [HideInInspector]

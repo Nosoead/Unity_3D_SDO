@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+//강의내용 그대로 입니다.
 public class InventoryItemSlot : MonoBehaviour
 {
     public ItemDataSO item;

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+//헬스와 동일합니다. 뭔가 추상화나 인터페이스로 접근하려다가 하루 다 날리고 그냥 나눴습니다.
 public class StaminaHandler : MonoBehaviour
 {
     [HideInInspector]

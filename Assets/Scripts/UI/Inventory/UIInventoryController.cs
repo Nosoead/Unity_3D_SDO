@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+//강의내용 그대로에 아이템 효과만 몇몇개 172번쨰 줄 쯤에 구현했습니다.
+//여기서 하루를 다 쓰고 실패해서 너무 아쉽습니다.
 public class UIInventoryController : MonoBehaviour
 {
     public InventoryItemSlot[] slots;

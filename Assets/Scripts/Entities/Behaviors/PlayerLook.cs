@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+//A,D로 좌우를 볼 수 있어 상하만 볼 수 있도록 했습니다.
 public class PlayerLook : MonoBehaviour
 {
     [Header("Look")]

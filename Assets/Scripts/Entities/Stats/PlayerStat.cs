@@ -1,7 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+//플레이어와 관련된 스탯을 모아놨습니다.
+//하지만 음? LOOK에는 왜 따로 넣어놨지? 라고 할 수 있습니다.
+//3인칭 하려다 망해서 거기에 있습니다. 1시전까지 계속 시도는 해보려고 합니다.
 public class PlayerStat : MonoBehaviour
 {
     [Header("Movement")]

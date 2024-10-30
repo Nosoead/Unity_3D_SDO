@@ -1,8 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+//강의내용에서 필요한 만큼 추가했습니다.
 [Serializable]
 public class ItemDataConsumable
 {

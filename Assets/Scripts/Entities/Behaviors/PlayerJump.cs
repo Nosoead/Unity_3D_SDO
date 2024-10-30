@@ -1,13 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+//이벤트를 받아 점프를 합니다.
 public class PlayerJump : MonoBehaviour
 {
     private Rigidbody jumpRigidbody;
     private InputHandler inputHandler;
     private PlayerStat stat;
 
+    //코루틴이 돌면 MaxCounter가 올라가 여러번 점프할 수 있습니다.
     private int jumpCounter = 0;
     private int jumpMaxCounter = 1;
     private Coroutine coroutine;
@@ -84,6 +85,6 @@ public class PlayerJump : MonoBehaviour
     {
         jumpMaxCounter = jumpCounter;
         yield return new WaitForSeconds(delayTime);
-        jumpMaxCounter = 0;
+        jumpMaxCounter = 1;
     }
 }
