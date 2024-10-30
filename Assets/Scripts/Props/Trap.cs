@@ -10,7 +10,7 @@ public class Trap : MonoBehaviour
     public float maxZ;
     public float moveDistance;
     public float moveSpeed;
-    public float speed;
+    public float speed =2f;
     public LayerMask mask;
 
     void Start()
