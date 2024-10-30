@@ -29,7 +29,7 @@ public class PlayerJump : MonoBehaviour
         inputHandler.OnJumpEvent -= OnJump;
     }
 
-    private void OnJump()
+    private void OnJump(bool isJump)
     {
         if (IsGround())
         {

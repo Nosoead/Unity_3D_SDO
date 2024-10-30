@@ -9,7 +9,7 @@ public class InputHandler : MonoBehaviour
 {
     public UnityAction<Vector2> OnMoveEvent;
     public UnityAction<Vector2> OnLookEvent;
-    public UnityAction OnJumpEvent;
+    public UnityAction<bool> OnJumpEvent;
     public UnityAction OnInteractionEvent;
     public UnityAction OnAttackEvent;
     public UnityAction<bool> OnVelocityUpEvent;
@@ -28,6 +28,7 @@ public class InputHandler : MonoBehaviour
         Input.Player.Move.performed += PlayerMove;
         Input.Player.Move.canceled += PlayerMove;
         Input.Player.Jump.performed += PlayerJump;
+        Input.Player.Jump.canceled += PlayerJump;
         Input.Player.Interaction.performed += PlayerInteraction;
         Input.Player.Attack.performed += PlayerAttack;
         Input.Player.VelocityUp.performed += PlayerVelocityUp;
@@ -60,7 +61,9 @@ public class InputHandler : MonoBehaviour
 
     public void PlayerJump(InputAction.CallbackContext context)
     {
-        OnJumpEvent?.Invoke();
+        float value = context.ReadValue<float>();
+        bool isPressed = value > 0.5f;
+        OnJumpEvent?.Invoke(isPressed);
     }
 
     public void PlayerInteraction(InputAction.CallbackContext context)
