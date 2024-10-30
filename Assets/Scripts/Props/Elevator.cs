@@ -4,17 +4,17 @@ using UnityEngine;
 //르탄레인 세로버전 엘리베이터입니다.
 public class Elevator : MonoBehaviour
 {
-    public float elevatordirection;
-    public float yRange;
+    public float elevatorSpeed;
+    public float moveDistance;
     private Vector3 position;
     private float minY;
     private float maxY;
-    private float direction;
+    private float speed;
     private void Awake()
     {
         position = transform.position;
         minY = transform.position.y;
-        maxY = minY + yRange;
+        maxY = minY + moveDistance;
     }
     private void Update()
     {
@@ -25,12 +25,12 @@ public class Elevator : MonoBehaviour
     {
         if (transform.position.y <= minY)
         {
-            direction = elevatordirection;
+            speed = elevatorSpeed;
         }
         else if (transform.position.y >= maxY)
         {
-            direction = -elevatordirection;
+            speed = -elevatorSpeed;
         }
-        transform.position += Vector3.up * direction * Time.deltaTime;
+        transform.position += Vector3.up * speed * Time.deltaTime;
     }
 }

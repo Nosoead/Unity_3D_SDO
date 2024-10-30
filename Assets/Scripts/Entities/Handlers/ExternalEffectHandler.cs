@@ -16,8 +16,8 @@ public class ExternalEffectHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        int PadLayer = LayerMask.NameToLayer("Pad");
-        if (other.gameObject.layer == PadLayer)
+        int JumpPadLayer = LayerMask.NameToLayer("JumpPad");
+        if (other.gameObject.layer == JumpPadLayer)
         {
             JumpPad jumpPad = other.GetComponent<JumpPad>();
             if (jumpPad != null)
