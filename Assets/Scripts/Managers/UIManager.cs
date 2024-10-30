@@ -9,7 +9,7 @@ public class UIManager : Singleton<UIManager>
     public UIConditionController conditionController;
     public GameObject Inventory;
 
-    private void Start()
+    private void Awake()
     {
         Inventory = GameObject.Find("CanVas_InventoryUI");
     }

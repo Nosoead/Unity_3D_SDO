@@ -31,6 +31,7 @@ public class PlayerToUI : MonoBehaviour
     private void OnInventory()
     {
         isPlaying = !isPlaying;
+        Debug.Log(isPlaying);
         UIManager.Instance.Inventory.SetActive(!isPlaying);
         Cursor.lockState = isPlaying ? CursorLockMode.Locked : CursorLockMode.None;
         if (isPlaying)

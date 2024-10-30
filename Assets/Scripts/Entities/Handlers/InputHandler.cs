@@ -91,6 +91,7 @@ public class InputHandler : MonoBehaviour
 
     public void PlayerInventory(InputAction.CallbackContext context)
     {
+        Debug.Log("??");
         OnInventoryEvent?.Invoke();
     }
 
