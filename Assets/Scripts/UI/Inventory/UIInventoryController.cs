@@ -30,7 +30,7 @@ public class UIInventoryController : MonoBehaviour
     int curEquipIndex;
 
 
-    void Start()
+    void Awake()
     {
         conditionController = CharacterManager.Instance.Player.conditionController;
         playerMovement = CharacterManager.Instance.Player.movement;
